@@ -1,11 +1,11 @@
 const fs = require("fs");
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const DB = require("./../../conquestDB/res.json");
 
 module.exports = {
   data: new SlashCommandBuilder().setName("clay-stats").setDescription("cs"),
 
   async execute(interaction) {
-    const DB = fs.readFile("./conquestDB/res.json", "utf8");
     const embed = new EmbedBuilder()
       .setColor(0xa09cb8)
       .setTitle("Stats for block Clay")
